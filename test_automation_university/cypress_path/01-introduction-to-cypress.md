@@ -118,3 +118,27 @@ Others: `.next()`, `.prev()`, `.parent()` and `.children()`
 We can't simulate a hover element that has a CSS property. -> `.click({force: true})`
 
 ---
+
+## Assertions
+
+- How can you confirm that an element is visible on the page in Cypress? Using the **should** command, for example: `cy.get(selector).should('be.visible')`
+
+`.should('be.visible')` -> to be visible
+
+`cy.get('[data-cu="new-card-input"]').should('have.length', 2)` -> the Cypress assertion to ensure that a certain number of elements are found
+
+When using get we have an array of element, that why we can use the .length
+
+- In a scenario where you want an element to always be in a 'checked' state at the end of the test, which Cypress command should you use? `cy.get('selector').check()` and `.uncheck()` to make sure is not check it. Another way: `cy.get('selector').should('be.checked')`
+
+- How would you assert in Cypress that there’s the text 'groceries' visible in an input element?
+
+`cy.get('selector').should('be.checked')` -> to be check it
+
+`cy.get('selector').should('have.class', 'completed')` -> to have the class `completed`
+
+`cy.get('selector').should('have.text', 'completed')` -> to have the text `completed`
+
+`cy.get('selector').should('have.value', 'groceries')` -> to check a text inside an input, it will be a value, not a text
+
+---
