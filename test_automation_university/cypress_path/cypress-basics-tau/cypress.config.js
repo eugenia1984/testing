@@ -7,6 +7,7 @@ module.exports = defineConfig({
     },
     baseUrl: 'https://cypress.io',
     viewportHeight: 550,
-    viewportWidth: 664
+    viewportWidth: 664,
+    experimentalStudio: true
   },
 });

@@ -70,3 +70,39 @@ And we can start running the tests:
 ... the view port width: `viewportWidth: 664`
 
 ---
+
+## Cypress Studio
+
+At the `settings` we have the **Studio**: generate and save commands directly to your test suite by interacting with your app as an end user would.
+
+At `cypress.config.js` add: `experimentalStudio: true`
+
+Now when you are running your specs, at the right side of the test name there is an icon to : add commands to test
+
+---
+
+## Selectors
+
+`cy.contains('new board')` -> to select the element that has the text: 'new board'
+
+`cy.get('.board')` -> to select by a class
+
+`cy.get('#board-1')` -> to select by ID
+
+`cy.get('[data-cy="board-item"]')` -> to select by an HTML attribute
+
+`cy.contains('.board', 'new board')` -> select the element with the class 'board' that contains teh text 'new board'
+
+You can use the cy.get command with a dot prefix for class, a hash symbol for ID, or square brackets for other attributes.
+
+`.first()` -> the first element
+
+`.last()` -> the last element
+
+`.eq(0)` -> the first element, `.eq(1)` the second element
+
+Others: `.next()`, `.prev()`, `.parent()` and `.children()`
+
+``
+
+---
