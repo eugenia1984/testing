@@ -295,3 +295,9 @@ describe('ACME Bank', () => {
 ```
 
 ---
+
+## Run mode
+
+`npx cypress run mode`
+
+- What happens when you run a test with a failure using Cypress? An error message is displayed in the console.
