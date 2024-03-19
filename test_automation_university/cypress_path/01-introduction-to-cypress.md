@@ -8,7 +8,7 @@
 - How to start a new Cypress project
 - How to write your first test
 - Write simple assertions
-- Learn a little bit about fundamentals that will give you a good start in writing - - - Great end-to-end tests
+- Learn a little bit about fundamentals that will give you a good start in writing 
 ```
 
 - [cypress-basics-tau](https://github.com/eugenia1984/testing/tree/main/test_automation_university/cypress_path/cypress-basics-tau) first Cypress exercise.
@@ -47,6 +47,8 @@ If you are going to download this repository, as the node_modules are not on Git
 
 -> Now I have a new file `cypress.config.js` in my project.
 
-- Click on "Scaffold example specs" and click on "OK, got it", and some test will be created inside the new `cypress` folder.
+- Click on "Scaffold example specs" and click on "OK, got it", and some test will be created inside the new `cypress` folder, with: `downloads`, `e2e`, `fixtures` and `support`.
+
+- Inside `cypress/e2e` we are going to create the first test: `spec.cy.js`
 
 ---

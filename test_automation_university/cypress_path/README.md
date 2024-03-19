@@ -8,4 +8,4 @@
 
 ## Commands:
 
- `npx cypress open` -> to run Cypress
+`npx cypress open` -> to run Cypress
