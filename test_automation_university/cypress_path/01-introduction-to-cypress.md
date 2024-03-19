@@ -55,4 +55,12 @@ And we can start running the tests:
 
 ![image](https://github.com/eugenia1984/testing/assets/72580574/029c782e-8ced-40d2-9163-87290db95c45)
 
+- At `cypress.config.js` we can add extra configuration, like...
+
+... the base URL: ` baseUrl: 'https://cypress.io'`
+
+... the view port height: `viewportHeight: 550,`
+
+... the view port width: `viewportWidth: 664`
+
 ---
