@@ -49,4 +49,8 @@ If you are going to download this repository, as the node_modules are not on Git
 
 - Click on "Scaffold example specs" and click on "OK, got it", and some test will be created inside the new `cypress` folder.
 
+And we can start running the tests:
+
+![image](https://github.com/eugenia1984/testing/assets/72580574/029c782e-8ced-40d2-9163-87290db95c45)
+
 ---
