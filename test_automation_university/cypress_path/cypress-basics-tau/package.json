@@ -1,12 +1,18 @@
 {
   "name": "cypress-basics-tau",
   "version": "1.0.0",
-  "description": "The first Crypress practice for the Test Automation University Cypress path",
+  "description": "The first Crypress.io practice for the Test Automation University Cypress path",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "cypress.io",
+    "testing"
+  ],
   "author": "María Eugenia Costa",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.7.0"
+  }
 }
