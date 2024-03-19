@@ -160,3 +160,15 @@ And the third is: **hybrid commands**, that will change the behavior whether the
 - inside one particular test: `it('test name', {defaultCommandTimeout: 6000}, () => {})`
 
 - adding a timeout on the command: `cy.get('selector', {timeout: 6000})`
+
+The time that will take the test to fail.
+
+---
+
+## Commands
+
+We have: **query** like `get()` or `last()`, **assertions** like `should()` and **actions** like `click()`.
+
+It will only re try the queries commands, until the assertions passes.
+
+---
