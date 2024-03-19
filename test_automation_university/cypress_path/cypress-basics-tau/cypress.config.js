@@ -11,3 +11,6 @@ module.exports = defineConfig({
     experimentalStudio: true
   },
 });
+
+
+require('@applitools/eyes-cypress')(module);

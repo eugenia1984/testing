@@ -172,3 +172,126 @@ We have: **query** like `get()` or `last()`, **assertions** like `should()` and 
 It will only re try the queries commands, until the assertions passes.
 
 ---
+
+## Plugins
+
+[https://docs.cypress.io/plugins](https://docs.cypress.io/plugins), one it's: **Applitools**
+
+### Integrate Visual AI Into Your Cypress Project
+
+This guide will show you how to add Visual AI Checkpoints to your existing project.
+
+### Install Dependencies
+
+- Install the Eyes SDK: `npm i -D @applitools/eyes-cypress`
+
+- Setup the SDK: The command below will configure Cypress to use the Applitools SDK commands: `npx eyes-setup`
+
+And you can check on terminal:
+
+```
+Setup Eyes-Cypress 3.42.3
+Cypress version: 13.7.0
+Plugins defined.
+Commands defined.
+TypeScript defined.
+Setup done!
+```
+
+and inside: `cypress/support/e2e.js` we have: `import '@applitools/eyes-cypress/commands'` and at `cypress.config.js` we can see: `require('@applitools/eyes-cypress')(module);`
+
+- Setting Up Your Environment: Before running the visual test, set up your API key as an environment variable named `APPLITOOLS_API_KEY`. You may set it through your IDE (if applicable), or you may set it from the command line like this: `set APPLITOOLS_API_KEY=<your-api-key>`
+
+### Modify Your Tests
+
+To run a Visual AI Checkpoint, there are 3 main steps:
+
+1. Call `cy.eyesOpen()`
+
+2. Call `cy.eyesCheckWindow()` to perform Visual AI assertions
+
+3. Call `cy.eyesClose()`
+
+#### Calling `cy.eyesOpen()`
+
+The `cy.eyesOpen()` command initializes a session with the Applitools server, allows you to configure the Eyes object and marks the beginning of a Visual AI Test.
+
+This function must be called before any calls to cy.eyesCheckWindow(). Therefore, it is recommended to place it in the beforeEach or the before hook for your test suite:
+
+```JavaScript
+beforeEach(() => {
+    // Start Applitools Visual AI Test
+    cy.eyesOpen({
+        appName: 'ACME Bank',
+        testName: Cypress.currentTest.title,
+    })
+})
+```
+
+#### Calling `cy.eyesCheckWindow()`
+
+The `cy.eyesCheckWindow()` command takes a Visual AI assertion of the current status of the page that you're testing. This method should be called within your actual test:
+
+```JavaScript
+ cy.eyesCheckWindow({
+    tag: "Login page",
+    fully: true
+});
+```
+
+#### Calling `cy.eyesClose()`
+
+The `cy.eyesClose()` command is the opposite of cy.eyesOpen() and marks the end of your Visual AI Test. This method should be called once per call to cy.eyesOpen(). So, if you're calling cy.eyesOpen() in the beforeEach hook, then call this method in the afterEach hook:
+
+```JavaScript
+afterEach(() => {
+    // End Applitools Visual AI Test
+    cy.eyesClose()
+})
+```
+
+#### Full Example
+
+Below is an example of a test case that uses Visual AI Assertions:
+
+```JavaScript
+describe('ACME Bank', () => {
+    beforeEach(() => {
+        // Start Applitools Visual AI Test
+        cy.eyesOpen({
+            appName: 'ACME Bank',
+            testName: Cypress.currentTest.title,
+        })
+    })
+
+    it('Cypress: Quickstart', () => {
+        cy.visit('https://sandbox.applitools.com/bank?layoutAlgo=true');
+
+        // Full Page - Visual AI Assertion
+        cy.eyesCheckWindow({
+            tag: "Login page"
+        });
+
+        cy.get('#username').type('user')
+        cy.get('#password').type('password')
+        cy.get('#log-in').click()
+        cy.get('.dashboardNav_navContainer__kA4wD').should('be.visible');
+
+        cy.eyesCheckWindow({
+            tag: "Main page",
+            // Uncomment to apply Layout regions and have test pass
+            // layout: [
+            //     {selector: '.dashboardOverview_accountBalances__3TUPB'},
+            //     {selector: '.dashboardTable_dbTable___R5Du'}
+            // ]
+        });
+    })
+
+    afterEach(() => {
+        // End Applitools Visual AI Test
+        cy.eyesClose()
+    })
+})
+```
+
+---
