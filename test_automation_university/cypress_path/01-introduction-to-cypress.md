@@ -8,7 +8,7 @@
 - How to start a new Cypress project
 - How to write your first test
 - Write simple assertions
-- Learn a little bit about fundamentals that will give you a good start in writing 
+- Learn a little bit about fundamentals that will give you a good start in writing
 ```
 
 - [cypress-basics-tau](https://github.com/eugenia1984/testing/tree/main/test_automation_university/cypress_path/cypress-basics-tau) first Cypress exercise.
@@ -142,3 +142,21 @@ When using get we have an array of element, that why we can use the .length
 `cy.get('selector').should('have.value', 'groceries')` -> to check a text inside an input, it will be a value, not a text
 
 ---
+
+## Chaining and retrying
+
+`cy.contains('[data-cy=card]', 'Jun 26 2023')` -> to select a card that has the date: Jun 26 2023. `contains` will select the first item that will find, but we can use **command chains** to pass information from one command to another, for example: `cy.get().click()`, we call it **child commands** because `click()`, `type()` or `should()` first they need to have a query command before it.
+
+We also have **parents commands** like : `cy.contains()`, `cy.visit()`, `cy.get()`.
+
+And the third is: **hybrid commands**, that will change the behavior whether they are at the beginning or they are a continuation of the chain, like: `contains()`
+
+---
+
+## Delay in a test
+
+- `cypress.config.js` add: `defaultCommandTimeout: 6000`, so it will wait 6 seconds between test
+
+- inside one particular test: `it('test name', {defaultCommandTimeout: 6000}, () => {})`
+
+- adding a timeout on the command: `cy.get('selector', {timeout: 6000})`
