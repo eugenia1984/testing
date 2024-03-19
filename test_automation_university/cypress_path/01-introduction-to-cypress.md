@@ -23,6 +23,12 @@ A testing tool created for developers.
 
 Cypress operates by creating two iframes, one of them runs our application, and the other one runs the Cypress script. This setup enables Cypress to interact directly with our application, eliminating any need for a middleware. That's a significant distinction from tools like Playwright or Selenium.
 
+- Cypress uses the Mocha framework for writing test cases.
+
+- The `cy.visit()` function is used in Cypress to visit a URL.
+
+- You can set a base URL in the cypress.config.js file
+
 ---
 
 ## Cypress-basic-tau
