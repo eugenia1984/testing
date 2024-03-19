@@ -4,6 +4,8 @@ Here I will leave all my testing courses and practices
 
 ## <img width="48" height="48" src="https://img.icons8.com/stickers/48/book-philosophy.png" alt="book philosophy"/> What you will find?
 
+- [Test Automation University](https://github.com/eugenia1984/testing/tree/main/test_automation_university) with Cypress path
+
 ---
 
 ## <img width="30" height="30" src="https://img.icons8.com/cotton/30/monitor--v1.png" alt="monitor"/> Technologies
