@@ -103,6 +103,18 @@ You can use the cy.get command with a dot prefix for class, a hash symbol for ID
 
 Others: `.next()`, `.prev()`, `.parent()` and `.children()`
 
-``
+---
+
+## Interaction
+
+`cy.get('[data-cy="add-list-input"]').type('new list')` -> to enter text into an input field
+
+`cy.get('[data-cy="add-list-input"]').type('new list{enter}')` -> `{enter}` to emulate click Enter
+
+`cy.contains('Add another card').click()` -> to click
+
+`it.only('', () => {})` -> if you have more than one test, and we add **.only** to one of them, we are going to run only that test.
+
+We can't simulate a hover element that has a CSS property. -> `.click({force: true})`
 
 ---
