@@ -41,5 +41,6 @@ tsc --init
 
 3. Installing and using TypeScript in Cypress project
 
+4. Writting Cypress test with TypeScript
 
 ---
