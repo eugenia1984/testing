@@ -8,6 +8,8 @@
 
 `hello.ts` and `hello.js` an example of how it's compile TypeScript to JavaScript using template literal.
 
+`support/command` with an example of a custom commands with JSDocs
+
 ---
 
 ## How to install TypeScript?
