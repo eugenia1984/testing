@@ -28,3 +28,18 @@ tsc --init
 ```
 
 ---
+
+- To get autocompletion of Cypress commands in .js files we need to use:  ``/// <reference types=cypress />`` comment at the top of our .js file
+
+---
+
+## Chapters
+
+1. Exploring types.
+
+2. Understanding the TypeScript compiler
+
+3. Installing and using TypeScript in Cypress project
+
+
+---
