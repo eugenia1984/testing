@@ -43,4 +43,13 @@ tsc --init
 
 4. Writting Cypress test with TypeScript
 
+5. Creating a Cypress command with TypeScript and JSDoc
+
+6. Reusing types from the source app in Cypress test
+
+7. Using utility types in custom commands
+
+8. Using the CLI to check types
+
+9. Leveraging TypeScript for visual testing
 ---
